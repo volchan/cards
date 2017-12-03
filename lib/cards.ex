@@ -1,18 +1,14 @@
 defmodule Cards do
-  @moduledoc """
-  Documentation for Cards.
-  """
+  def create_deck do
+    ["Ace", "Two", "Three"]
+  end
 
-  @doc """
-  Hello world.
+  def shuffle(deck) do
+    deck |> Enum.shuffle
+  end
 
-  ## Examples
-
-      iex> Cards.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def contains?(deck, card) do
+    capitalized_card = card |> String.capitalize
+    deck |> Enum.member?(capitalized_card)
   end
 end
